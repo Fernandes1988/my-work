@@ -1,0 +1,48 @@
+function sendMessage() {
+    var userMsg = document.getElementById("user-input").value;
+    var chatBox = document.getElementById("chat-box");
+    
+    // Display user message
+    chatBox.innerHTML += "<p><strong>You:</strong> " + userMsg + "</p>";
+    
+    // Clear input field
+    document.getElementById("user-input").value = "";
+    
+    // Scroll chat box to bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+    
+    // Make an HTTP request to your AI endpoint
+    fetch('your_ai_endpoint', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userMsg }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display AI response
+        chatBox.innerHTML += "<p><strong>AI:</strong> " + data.message + "</p>";
+        // Scroll chat box to bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+
+
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/your_ai_endpoint', methods=['POST'])
+def ai_endpoint():
+    user_message = request.json['message']
+    # Use your AI model or service to generate a response based on the user message
+    ai_response = your_ai_model(user_message)
+    return jsonify({'message': ai_response})
+
+if __name__ == '__main__':
+    app.run(debug=True)

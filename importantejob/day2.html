@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="day1/image/images 34.jpeg">
+    <title>My Website</title>
+    <head>
+  <body>
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <h2>Welcome to My Website</h2>
+        <p>This is a sample website created using HTML.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+function sendMessage() {
+    var userMsg = document.getElementById("user-input").value;
+    var chatBox = document.getElementById("chat-box");
+    
+    
+    chatBox.innerHTML += "<p><strong>You:</strong> " + userMsg + "</p>";
+    
+  
+    document.getElementById("user-input").value = "";
+    
+   
+    chatBox.scrollTop = chatBox.scrollHeight;
+    
+   
+    fetch('url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userMsg }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        chatBox.innerHTML += "<p><strong>AI:</strong> " + data.message + "</p>";
+       
+        chatBox.scrollTop = chatBox.scrollHeight;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="londonweather.pmg.png">
+    <title>UK weather</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+            background-image: url(londonweather.pmg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        body {
+        height: 100vh;
+        display: flex;
+       
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        font-size: 3rem;
+        font-family: sans-serif;
+        color: rgb(7, 7, 7);
+    }
+  
+    .container {
+        height: 20rem;
+        width: 15rem;
+        text-align: center;
+        margin: 30px;
+    }
+
+   
+
+ </style>
+</head>
+<body>
+    
+
+    <div class="container">
+
+    <div class='font-size:100px;'>&#9925;</div>    
+   
+    <div class="temp">-°C</div>
+
+    <div class="summary">----</div>
+
+    <div class="location"></div>
+   
+    </div>
+    <!--Linking the javascript code-->
+    <script src="script.js"></script>
+   
+    
+  
+
+<script>
+let lon;
+let lat;
+let temperature = document.querySelector(".temp");
+
+let summary = document.querySelector(".summary");
+
+let loc = document.querySelector(".location");
+
+let icon = document.querySelector(".icon");
+
+const kelvin = 273;
+
+window.addEventListener("load", () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+      lon = position.coords.longitude;
+      lat = position.coords.latitude;
+ 
+      // API ID
+      const api = "28d7778f6cb50ed0ba31ee2bf498209e";
+ 
+      // API URL
+      const base =
+`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
+`lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
+ 
+      // Calling the API
+      fetch(base)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          temperature.textContent = 
+              Math.floor(data.main.temp - kelvin) + "°C";
+          summary.textContent = data.weather[0].description;
+          loc.textContent = data.name + "," + data.sys.country;
+          let icon1 = data.weather[0].icon;
+          icon.innerHTML = 
+              `<img src="icons/${icon1}.svg" style= 'height:10rem'/>`;
+        });
+    });
+  }
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

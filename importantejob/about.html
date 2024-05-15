@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png">
+    <title>AI Website</title>
+
+    <style>
+      body{
+         background-image: url(aifocus.png);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-attachment: fixed;
+         margin: 0;
+      }
+
+         
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: rgba (0, 0, 0, .1);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba (0, 0, 0, .1);
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: rgba (0, 0, 0, .1);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>What is AI?</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="image24.html">AI Images</a>
+         <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+    </nav>
+    
+    <section>
+      
+        <p style="color:white"> Is machine learning?
+            Machine learning is a form of artificial intelligence based
+             on algorithms that are trained on data. These algorithms can
+              detect patterns and learn how to make predictions and
+               recommendations by processing data and experiences,
+                rather than by receiving explicit programming instruction.
+                 The algorithms also adapt in response to new data and
+                  experiences to improve their efficacy over time.
+                   The volume and complexity of data that is now
+                    being generated, too vast for humans to reasonably
+                     reckon with, has increased the potential of
+                      machine learning, as well as the need for it.
+                       In the years since its widespread deployment,
+                        which began in the 1970s, machine learning has
+                         had impact in a number of industries, including 
+                         achievements in medical-imaging analysis 
+                         and high-resolution weather forecasting.</p>
+                         <br><br>
+                         <hr>
+
+          <p style="color: white;">What is generative AI?
+            Generative AI is an AI model that generates 
+            content in response to a prompt. It’s clear 
+            that generative-AI tools like ChatGPT and
+             DALL-E (a tool for making AI-generated art)
+              have the potential to change how a range of
+               jobs are performed. The full scope of that
+                impact, though, is still unknown—as are
+                 the risks. But there are some questions
+                  we can answer—like how generative-AI models
+                   are built, what kinds of problems they
+                    are best suited to solve, and how they
+                     fit into the broader category of AI 
+                     and machine learning.
+            Read our McKinsey Explainer on generative AI,
+             and learn more about QuantumBlack, AI by McKinsey.</p> 
+              <br><br>
+            <hr>
+             <p style="color: white;">What are the advantages and disadvantages of artificial intelligence?
+                Artificial neural networks and deep learning AI technologies are quickly evolving, primarily because AI can process large amounts of data much faster and make predictions more accurately than humanly possible.
+                
+                While the huge volume of data created on a daily basis would bury a human researcher, AI applications using machine learning can take that data and quickly turn it into actionable information. As of this writing, a primary disadvantage of AI is that it is expensive to process the large amounts of data AI programming requires. As AI techniques are incorporated into more products and services, organizations must also be attuned to AI's potential to create biased and discriminatory systems, intentionally or inadvertently.
+                
+                Advantages of AI
+                The following are some advantages of AI.
+                
+                Good at detail-oriented jobs. AI has proven to be just as good, if not better than doctors at diagnosing certain cancers, including breast cancer and melanoma.
+                Reduced time for data-heavy tasks. AI is widely used in data-heavy industries, including banking and securities, pharma and insurance, to reduce the time it takes to analyze big data sets. Financial services, for example, routinely use AI to process loan applications and detect fraud.
+                Saves labor and increases productivity. An example here is the use of warehouse automation, which grew during the pandemic and is expected to increase with the integration of AI and machine learning.
+                Delivers consistent results. The best AI translation tools deliver high levels of consistency, offering even small businesses the ability to reach customers in their native language.
+                Can improve customer satisfaction through personalization. AI can personalize content, messaging, ads, recommendations and websites to individual customers.
+                AI-powered virtual agents are always available. AI programs do not need to sleep or take breaks, providing 24/7 service.
+                Disadvantages of AI
+                The following are some disadvantages of AI.
+                
+                Expensive.
+                Requires deep technical expertise.
+                Limited supply of qualified workers to build AI tools.
+                Reflects the biases of its training data, at scale.
+                Lack of ability to generalize from one task to another.
+                Eliminates human jobs, increasing unemployment rates.</p>
+                <hr>
+             
+
+
+    </section>
+    <footer>
+        <p>&copy; 2024 AI Website. All rights reserved.</p>
+    </footer>
+     
+   
+
+
+
+    <script>
+      
+        function generateAIResponse() {
+            const responses = [
+                "Hello, how can I assist you?",
+                "What can I help you with today?",
+                "Feel free to ask me anything!",
+                "I'm here to provide assistance.",
+                "How can I be of service?"
+            ];
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            return responses[randomIndex];
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const aiResponseDiv = document.getElementById("aiResponse");
+            aiResponseDiv.textContent = generateAIResponse();
+        });
+
+   
+
+    </script>
+</body>
+</html>
+

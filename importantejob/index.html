@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png">
+    <title>AI Website</title>
+
+    <style>
+      body{
+         background-image: url(background.png);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-attachment: fixed;
+         margin: 0;
+      }
+
+         
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: rgba (0, 0, 0, .1);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba (0, 0, 0, .1);
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: rgba (0, 0, 0, .1);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+   
+</head>
+<body>
+    <header>
+        <h1>AI Website</h1>
+    </header>
+    <nav class="nabar">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="image24.html">AI Images</a>
+           <a href="about.html">About</a>
+           <a href="contact.html">Contact</a>
+           <a href="Portfolio.html">My Portfolio</a>
+        </ul>  
+    </nav>
+
+  
+    <section>
+        <h2 style="color: white;">AI Website</h2>
+        <div id="aiResponse"></div>
+    </section>
+    <footer>
+        <p>&copy; 2024 AI Website. All rights reserved.</p>
+    </footer>
+     
+    <div class="item">
+        <img src="ai-generated background.png" alt="">
+        <div class="content">
+      </div>
+
+
+
+    <script>
+    
+
+        function generateAIResponse() { 
+            const responses = [ 
+                 "Hello, how can I assist you?",
+                "What can I help you with today?",
+                "Feel free to ask me anything!",
+                "I'm here to provide assistance.",
+                "How can I be of service?"
+            ];
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            return responses[randomIndex];
+        }
+       
+        document.addEventListener("DOMContentLoaded" , function() {
+            const aiResponseDiv = document.getElementById("aiResponse");
+            aiResponseDiv.textContent = generateAIResponse();
+        });
+
+   
+
+    </script>
+</body>
+</html>

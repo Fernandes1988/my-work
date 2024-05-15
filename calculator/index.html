@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html long="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widht=device-widht, initial- scale=1.0">
+    <title>decument</title>
+
+
+  
+</head>
+
+<body>
+
+
+    
+    <div id="calculator">
+        <input id="display" readonly>
+        <div id="keys">
+            <button onclick="appentodisplay('+')" class="operator-btn">+</button>
+            <button onclick="appentodisplay('7')">7</button>
+            <button onclick="appentodisplay('8')">8</button>
+            <button onclick="appentodisplay('9')">9</button>
+            <button onclick="appentodisplay('-')" class="operator-btn">-</button>
+            <button onclick="appentodisplay('4')">4</button>
+            <button onclick="appentodisplay('5')">5</button>
+            <button onclick="appentodisplay('6')">6</button>
+            <button onclick="appentodisplay('*')" class="operator-btn">*</button>
+            <button onclick="appentodisplay('1')">1</button>
+            <button onclick="appentodisplay('2')">2</button>
+            <button onclick="appentodisplay('3')">3</button>
+            <button onclick="appentodisplay('/')" class="operator-btn">/</button>
+            <button onclick="appentodisplay('0')">0</button>
+            <button onclick="appentodisplay('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="cleardisplay()" class="operator-btn">c</button>
+
+        </div>
+
+        <head>
+            <style>
+                body {
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                }
+
+                #calculator {
+
+                    font-family: arial, sans-serif;
+                    background-color: rgb(20, 20, 20);
+                    border-radius: 15px;
+                    max-width: 500px;
+                    overflow: hidden;
+                }
+
+                #display {
+                    width: 100%;
+                    padding: 20px;
+                    font-size: 5rem;
+                    text-align: left;
+                    border: none;
+                    background-color: rgb(36, 36, 37);
+                    color: rgb(247, 248, 247);
+
+                }
+
+                #keys {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 10px;
+                    padding: 25px;
+
+                }
+
+                button {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50px;
+                    border: none;
+                    background-color: rgb(219, 139, 18);
+                    color: white;
+                    font-size: 3rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background-color: rgb(250, 143, 4);
+                }
+
+                button:active {
+                    background-color: rgb(129, 233, 11);
+                }
+
+                .button-btn {
+                    background-color: orange;
+                }
+
+                .operartor-btn:hover {
+                    background-color: rgb(238, 182, 108);
+
+                }
+
+                .operartor-btn:active {
+                    background-color: rgb(126, 108, 31);
+
+                }
+            </style>
+        </head>
+
+
+
+        <script>
+
+            const display = document.getElementById("display");
+
+            function appentodisplay(input) {
+                display.value += input;
+
+            }
+
+            function cleardisplay() {
+                display.value = "";
+
+            }
+
+            function calculate() {
+                try {
+                    display.value = eval(display.value);
+                }
+                catch (error) {
+                    display.value = "error";
+                }
+            }
+
+
+
+
+
+        </script>
+        </head>
+        <img src="pato.png" alt="pato" height="200" width="500"> /**
+      
+
+
+
+ 
+  
